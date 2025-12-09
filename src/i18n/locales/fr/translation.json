@@ -1,0 +1,159 @@
+{
+    "login": {
+        "welcome": "Console d'administration",
+        "email_label": "Email",
+        "email_placeholder": "m@exemple.com",
+        "password_label": "Mot de passe",
+        "password_placeholder": "••••••••",
+        "sign_in": "Se connecter",
+        "forgot_password": "Mot de passe oublié ?",
+        "invalid_email": "Adresse email invalide",
+        "invalid_credentials": "Identifiants invalides"
+    },
+    "forgot_password": {
+        "title": "Mot de passe oublié",
+        "description": "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe",
+        "send_link": "Envoyer le lien",
+        "back_to_login": "Retour à la connexion",
+        "success_message": "Vérifiez votre email pour le lien de réinitialisation."
+    },
+    "sidebar": {
+        "dashboard": "Tableau de bord",
+        "projects": "Projets",
+        "my_projects": "Mes projets",
+        "invited_projects": "Mes invitations",
+        "addendas": "Addendas",
+        "partners": "Partenaires",
+        "statistics": "Statistiques",
+        "logout": "Déconnexion",
+        "logout_confirm_title": "Se déconnecter ?",
+        "logout_confirm_description": "Vous allez être déconnecté de la console. Voulez-vous continuer ?",
+        "logout_cancel": "Annuler",
+        "logout_confirm": "Confirmer"
+    },
+    "navbar": {
+        "search_placeholder": "Rechercher...",
+        "profile": "Profil",
+        "settings": "Paramètres"
+    },
+    "datatable": {
+        "search_placeholder": "Rechercher...",
+        "columns": "Colonnes",
+        "no_results": "Aucun résultat",
+        "rows_per_page": "Lignes par page",
+        "page": "Page",
+        "first_page": "Première page",
+        "previous_page": "Page précédente",
+        "next_page": "Page suivante",
+        "last_page": "Dernière page",
+        "pagination_left": "Left",
+        "pagination_right": "Right",
+        "display": "Affichage {{start}}-{{end}} sur {{total}} résultats",
+        "column_labels": {
+            "id": "ID",
+            "name": "Nom",
+            "client": "Client",
+            "status": "Statut"
+        }
+    },
+    "projects": {
+        "search_placeholder": "Rechercher des projets...",
+        "new_project": "Nouveau projet",
+        "columns": {
+            "project_details": "PROJETS"
+        },
+        "actions": {
+            "label": "Actions",
+            "copy_id": "Copier l'ID du projet",
+            "view_details": "Voir les détails",
+            "edit": "Modifier le projet",
+            "delete": "Supprimer"
+        },
+        "filters": {
+            "status_label": "Statut",
+            "status_placeholder": "Sélectionner un statut",
+            "status_all": "Tous les statuts",
+            "status_active": "Actif",
+            "status_completed": "Terminé",
+            "status_pending": "En attente",
+            "status_cancelled": "Annulé"
+        },
+        "details": {
+            "breadcrumb": "Projets",
+            "title": "Détails du projet",
+            "subtitle": "Aperçu du projet n°{{id}}",
+            "project_placeholder": "...",
+            "page_titles": {
+                "details": "Détails du projet : {{id}}",
+                "partners": "Partenaires du projet : {{id}}",
+                "dashboard": "Tableau de bord du projet : {{id}}",
+                "intervenants": "Intervenants du projet : {{id}}",
+                "addendas": "Addendas du projet : {{id}}"
+            },
+            "tabs": {
+                "dashboard": "Dashboard",
+                "details": "Détails",
+                "partners": "Partenaires",
+                "intervenants": "Intervenants",
+                "addendas": "Addendas"
+            },
+            "dashboard": {
+                "tab_title": "Informations du tableau de bord",
+                "overview": "Visualisez les indicateurs clés pour mesurer l’avancement des soumissions et la qualité des réponses.",
+                "engagement": "Suivez la répartition des réponses favorables et défavorables pour adapter la stratégie de mobilisation.",
+                "history": "Historique des actions et relances effectuées auprès des partenaires impliqués.",
+                "trend": "Tendance actuelle",
+                "trend_description": "Les réponses positives progressent de 12% par rapport au mois précédent.",
+                "target": "Objectifs",
+                "target_description": "Maintenir un taux de réponses favorables supérieur à 60% sur la période."
+            },
+            "intervenants": {
+                "search_placeholder": "Rechercher un intervenant...",
+                "role_filter_placeholder": "Filtrer par rôle",
+                "roles": {
+                    "all": "Tous les rôles"
+                },
+                "add_button": "Ajouter un intervenant",
+                "modal": {
+                    "title": "Sélectionner des intervenants",
+                    "description": "Choisissez les intervenants à associer au projet.",
+                    "placeholder": "Sélectionner des intervenants",
+                    "selected_count": "{{count}} sélection(s)"
+                },
+                "columns": {
+                    "name": "Nom complet",
+                    "phone": "Téléphone",
+                    "role": "Rôle",
+                    "actions": "Actions"
+                },
+                "actions": {
+                    "details": "Détails",
+                    "delete": "Supprimer"
+                },
+                "delete_confirm": "Êtes-vous sûr de vouloir retirer cet intervenant ?",
+                "empty": "Aucun intervenant ne correspond à votre recherche."
+            },
+            "sections": {
+                "overview": {
+                    "title": "Aperçu",
+                    "description": "Affichez ici les informations clés du projet, jalons, budgets et statut courant."
+                },
+                "partners": {
+                    "title": "Partenaires",
+                    "description": "Listez les organisations partenaires impliquées dans ce projet avec leurs contacts."
+                }
+            }
+        },
+        "add": {
+            "title": "Nouveau projet",
+            "breadcrumb": "Nouveau projet",
+            "steps": {
+                "step1": "Étape 1 - Informations générales",
+                "step2": "Étape 2 - Documentation",
+                "step3": "Étape 3 - Budget",
+                "step4": "Étape 4 - Partenaires",
+                "step5": "Étape 5 - Validation finale"
+            }
+        }
+    }
+}

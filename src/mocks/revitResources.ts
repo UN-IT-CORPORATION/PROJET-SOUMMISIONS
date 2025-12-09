@@ -1,0 +1,76 @@
+import type { ResourceCard } from "@/components/common/ResourceCardGrid"
+
+export const mockRevitResources: ResourceCard[] = [
+    {
+        id: "doc-1",
+        name: "Plan structure niveau 3",
+        fileName: "plan-structure-n3.pdf",
+        sizeLabel: "12 Mo",
+        type: "pdf",
+        addedAt: "12 Nov 2025",
+        division: "Structure",
+    },
+    {
+        id: "doc-2",
+        name: "Quantitatif béton",
+        fileName: "quantitatif-beton.xlsx",
+        sizeLabel: "8.5 Mo",
+        type: "excel",
+        addedAt: "10 Nov 2025",
+        division: "Structure",
+    },
+    {
+        id: "doc-3",
+        name: "Modèle REVIT v2",
+        fileName: "modele-revit-v2.rvt",
+        sizeLabel: "54 Mo",
+        type: "cad",
+        addedAt: "08 Nov 2025",
+    },
+    {
+        id: "doc-4",
+        name: "Coupe façade nord",
+        fileName: "coupe-facade-nord.jpg",
+        sizeLabel: "6.2 Mo",
+        type: "image",
+        addedAt: "07 Nov 2025",
+        division: "Architecture",
+    },
+    {
+        id: "doc-5",
+        name: "Plan électrique",
+        fileName: "plan-electrique.pdf",
+        sizeLabel: "15 Mo",
+        type: "pdf",
+        addedAt: "05 Nov 2025",
+        division: "MEP",
+    },
+    {
+        id: "doc-6",
+        name: "Décompte ferraillage",
+        fileName: "decompte-ferraillage.xlsx",
+        sizeLabel: "9.2 Mo",
+        type: "excel",
+        addedAt: "01 Nov 2025",
+        division: "Structure",
+    },
+    {
+        id: "doc-7",
+        name: "Modelisation HVAC",
+        fileName: "modelisation-hvac.rvt",
+        sizeLabel: "42 Mo",
+        type: "cad",
+        addedAt: "28 Oct 2025",
+    },
+    {
+        id: "doc-8",
+        name: "Rendu 3D lobby",
+        fileName: "rendu-lobby.png",
+        sizeLabel: "18 Mo",
+        type: "image",
+        addedAt: "26 Oct 2025",
+        division: "Architecture",
+    },
+]
+
+

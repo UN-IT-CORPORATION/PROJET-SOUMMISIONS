@@ -1,0 +1,159 @@
+{
+    "login": {
+        "welcome": "Administration Console",
+        "email_label": "Email",
+        "email_placeholder": "m@example.com",
+        "password_label": "Password",
+        "password_placeholder": "••••••••",
+        "sign_in": "Sign In",
+        "forgot_password": "Forgot your password?",
+        "invalid_email": "Invalid email address",
+        "invalid_credentials": "Invalid credentials"
+    },
+    "forgot_password": {
+        "title": "Forgot Password",
+        "description": "Enter your email address and we'll send you a link to reset your password",
+        "send_link": "Send Reset Link",
+        "back_to_login": "Back to Login",
+        "success_message": "Check your email for the reset link."
+    },
+    "sidebar": {
+        "dashboard": "Dashboard",
+        "projects": "Projects",
+        "my_projects": "My Projects",
+        "invited_projects": "My Invitations",
+        "addendas": "Addendas",
+        "partners": "Partners",
+        "statistics": "Statistics",
+        "logout": "Logout",
+        "logout_confirm_title": "Sign out?",
+        "logout_confirm_description": "You will be disconnected from the console. Are you sure you want to continue?",
+        "logout_cancel": "Cancel",
+        "logout_confirm": "Sign out"
+    },
+    "navbar": {
+        "search_placeholder": "Search...",
+        "profile": "Profile",
+        "settings": "Settings"
+    },
+    "datatable": {
+        "search_placeholder": "Search...",
+        "columns": "Columns",
+        "no_results": "No results found",
+        "rows_per_page": "Rows per page",
+        "page": "Page",
+        "first_page": "First page",
+        "previous_page": "Previous page",
+        "next_page": "Next page",
+        "last_page": "Last page",
+        "pagination_left": "Left",
+        "pagination_right": "Right",
+        "display": "Displaying {{start}}-{{end}} of {{total}} results",
+        "column_labels": {
+            "id": "ID",
+            "name": "Name",
+            "client": "Client",
+            "status": "Status"
+        }
+    },
+    "projects": {
+        "search_placeholder": "Search projects...",
+        "new_project": "New Project",
+        "columns": {
+            "project_details": "Projects"
+        },
+        "actions": {
+            "label": "Actions",
+            "copy_id": "Copy project ID",
+            "view_details": "View details",
+            "edit": "Edit project",
+            "delete": "Delete"
+        },
+        "filters": {
+            "status_label": "Status",
+            "status_placeholder": "Select status",
+            "status_all": "All statuses",
+            "status_active": "Active",
+            "status_completed": "Completed",
+            "status_pending": "Pending",
+            "status_cancelled": "Cancelled"
+        },
+        "details": {
+            "breadcrumb": "Projects",
+            "title": "Project details",
+            "subtitle": "Overview for project #{{id}}",
+            "project_placeholder": "...",
+            "page_titles": {
+                "details": "Project details: {{id}}",
+                "partners": "Project partners: {{id}}",
+                "dashboard": "Project dashboard: {{id}}",
+                "intervenants": "Project stakeholders: {{id}}",
+                "addendas": "Project addendas: {{id}}"
+            },
+            "tabs": {
+                "dashboard": "Dashboard",
+                "details": "Details",
+                "partners": "Partners",
+                "intervenants": "Stakeholders",
+                "addendas": "Addendas"
+            },
+            "dashboard": {
+                "tab_title": "Dashboard insights",
+                "overview": "View the key indicators to measure submission progress and the quality of responses.",
+                "engagement": "Track the split between positive, negative and pending answers to adjust stakeholder engagement.",
+                "history": "History of actions and follow-ups performed with divisions and partners.",
+                "trend": "Current trend",
+                "trend_description": "Positive responses are up by 12% compared to last month.",
+                "target": "Targets",
+                "target_description": "Keep the share of positive answers above 60% for the whole period."
+            },
+            "intervenants": {
+                "search_placeholder": "Search an attendee...",
+                "role_filter_placeholder": "Filter by role",
+                "roles": {
+                    "all": "All roles"
+                },
+                "add_button": "Add stakeholder",
+                "modal": {
+                    "title": "Select stakeholders",
+                    "description": "Choose the people to associate with this project.",
+                    "placeholder": "Select stakeholders",
+                    "selected_count": "{{count}} selected"
+                },
+                "columns": {
+                    "name": "Full name",
+                    "phone": "Phone",
+                    "role": "Role",
+                    "actions": "Actions"
+                },
+                "actions": {
+                    "details": "Details",
+                    "delete": "Delete"
+                },
+                "delete_confirm": "Are you sure you want to remove this stakeholder?",
+                "empty": "No stakeholder matches your search."
+            },
+            "sections": {
+                "overview": {
+                    "title": "Overview",
+                    "description": "Display key project metadata, milestones, budgets and current status here."
+                },
+                "partners": {
+                    "title": "Partners",
+                    "description": "List partner organisations involved in this project along with their contact info."
+                }
+            }
+        },
+        "add": {
+            "title": "New project",
+            "breadcrumb": "New project",
+            "steps": {
+                "step1": "Step 1 - General information",
+                "step2": "Step 2 - Documentation",
+                "step3": "Step 3 - Budget",
+                "step4": "Step 4 - Partners",
+                "step5": "Step 5 - Final validation"
+            }
+        }
+    }
+}
