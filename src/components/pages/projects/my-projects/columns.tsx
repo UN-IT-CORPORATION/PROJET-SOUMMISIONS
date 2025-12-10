@@ -12,7 +12,7 @@ import type { Project } from "@/mocks/projects"
 import type { ColumnDef } from "@tanstack/react-table"
 import { Link } from "@tanstack/react-router"
 import type { TFunction } from "i18next"
-import { ArrowUpDown, Eye, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
+import { ArrowUpDown, Eye, MoreVertical, Pencil, Trash2 } from "lucide-react"
 import { DeleteConfirmationModal } from "@/components/common/DeleteConfirmationModal"
 
 export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
@@ -147,6 +147,12 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
     },
     {
         id: "actions",
+        header: () => <Button
+            variant="ghost"
+            className="cursor-pointer"
+        >
+            ACTION
+        </Button>,
         enableHiding: false,
         cell: ({ row }) => {
             const project = row.original
@@ -163,7 +169,7 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
                         <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="h-8 w-8 p-0 cursor-pointer">
                                 <span className="sr-only">Open menu</span>
-                                <MoreHorizontal className="h-4 w-4" />
+                                <MoreVertical className="h-4 w-4" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
