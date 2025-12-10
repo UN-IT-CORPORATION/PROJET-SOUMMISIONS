@@ -29,8 +29,8 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             </Button>
         ),
         cell: ({ row }) => (
-            <div className="font-mono text-sm font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded w-fit">
-                #{row.getValue("id")}
+            <div className="font-mono text-sm font-medium text-gray-600  px-2 py-1 rounded w-fit">
+                {row.getValue("id")}
             </div>
         ),
     },
@@ -61,11 +61,11 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             }
 
             return (
-                <div className="flex flex-col gap-1.5 py-1">
+                <div className="flex flex-col gap-2 py-1">
                     <Link
                         to="/projects/view/dashboard"
                         search={{ projectId: project.id }}
-                        className="text-gray-900 font-semibold hover:text-primary hover:underline hover:underline-offset-2 cursor-pointer transition-colors"
+                        className="text-gray-900 font-medium text-lg cursor-pointer"
                     >
                         {project.name}
                     </Link>
