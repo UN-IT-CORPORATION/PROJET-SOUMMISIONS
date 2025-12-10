@@ -51,13 +51,13 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             const project = row.original
 
             const typeColors: Record<string, string> = {
-                "Commercial": "bg-blue-100 text-blue-700",
-                "Industriel léger": "bg-emerald-100 text-emerald-700",
-                "Industriel lourd": "bg-red-100 text-red-700",
-                "Industriel moyen": "bg-orange-100 text-orange-700",
-                "Multirésidentiel léger": "bg-purple-100 text-purple-700",
-                "Multirésidentiel lourd": "bg-indigo-100 text-indigo-700",
-                "Résidentiel": "bg-cyan-100 text-cyan-700",
+                "Commercial": "bg-blue-50 text-blue-700 border-blue-300",
+                "Industriel léger": "bg-emerald-50 text-emerald-700 border-emerald-300",
+                "Industriel lourd": "bg-red-50 text-red-700 border-red-300",
+                "Industriel moyen": "bg-orange-50 text-orange-700 border-orange-300",
+                "Multirésidentiel léger": "bg-purple-50 text-purple-700 border-purple-300",
+                "Multirésidentiel lourd": "bg-indigo-50 text-indigo-700 border-indigo-300",
+                "Résidentiel": "bg-cyan-50 text-cyan-700 border-cyan-300",
             }
 
             return (
@@ -69,15 +69,11 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
                     >
                         {project.name}
                     </Link>
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                        <span className="font-medium">Ref:</span>
-                        <span>{project.reference}</span>
-                    </div>
                     <div className="flex items-center gap-1 text-xs text-gray-500">
-                        <span>📅</span>
+                        <span className="font-medium">Période :</span>
                         <span>{new Date(project.submissionPeriod.start).toLocaleDateString()} - {new Date(project.submissionPeriod.end).toLocaleDateString()}</span>
                     </div>
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full w-fit ${typeColors[project.type] || "bg-gray-100 text-gray-700"}`}>
+                    <span className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium border w-fit ${typeColors[project.type] || "bg-gray-50 text-gray-700 border-gray-300"}`}>
                         {project.type}
                     </span>
                 </div>
@@ -85,45 +81,22 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
         },
     },
     {
-        accessorKey: "status",
+        accessorKey: "reference",
         header: ({ column }) => (
             <Button
                 variant="ghost"
                 onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 className="cursor-pointer -ml-4 hover:bg-gray-100"
             >
-                STATUT
+                RÉFÉRENCE
                 <ArrowUpDown className="ml-2 h-3.5 w-3.5 text-gray-400" />
             </Button>
         ),
-        cell: ({ row }) => {
-            const status = row.getValue("status") as string
-            const statusConfig = {
-                initiated: {
-                    bg: "bg-blue-100",
-                    text: "text-blue-700 uppercase",
-                    dot: "bg-blue-500",
-                    label: "Initié"
-                },
-                requested: {
-                    bg: "bg-amber-100",
-                    text: "text-amber-700 uppercase",
-                    dot: "bg-amber-500",
-                    label: "Demandé"
-                },
-            }
-
-            const config = statusConfig[status as keyof typeof statusConfig]
-
-            return (
-                <div
-                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${config?.bg} ${config?.text}`}
-                >
-                    <span className={`h-1.5 w-1.5 rounded-full ${config?.dot}`} />
-                    {config?.label}
-                </div>
-            )
-        },
+        cell: ({ row }) => (
+            <div className="font-mono text-sm font-medium text-gray-600">
+                {row.getValue("reference")}
+            </div>
+        ),
     },
     {
         accessorKey: "createdAt",
@@ -163,6 +136,49 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             return (
                 <div className="text-sm text-gray-600">
                     {date.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' })}
+                </div>
+            )
+        },
+    },
+    {
+        accessorKey: "status",
+        header: ({ column }) => (
+            <Button
+                variant="ghost"
+                onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                className="cursor-pointer -ml-4 hover:bg-gray-100"
+            >
+                STATUT
+                <ArrowUpDown className="ml-2 h-3.5 w-3.5 text-gray-400" />
+            </Button>
+        ),
+        cell: ({ row }) => {
+            const status = row.getValue("status") as string
+            const statusConfig = {
+                initiated: {
+                    bg: "bg-blue-50",
+                    text: "text-blue-700",
+                    dot: "bg-blue-500",
+                    border: "border-blue-300",
+                    label: "Initié"
+                },
+                requested: {
+                    bg: "bg-amber-50",
+                    text: "text-amber-700",
+                    dot: "bg-amber-500",
+                    border: "border-amber-300",
+                    label: "Demandé"
+                },
+            }
+
+            const config = statusConfig[status as keyof typeof statusConfig]
+
+            return (
+                <div
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-0.5 text-xs font-medium border ${config?.bg} ${config?.text} ${config?.border}`}
+                >
+                    <span className={`h-1.5 w-1.5 rounded-full ${config?.dot}`} />
+                    {config?.label}
                 </div>
             )
         },
