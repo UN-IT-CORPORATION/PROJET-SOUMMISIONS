@@ -155,7 +155,7 @@ export function AddendaUploadForm({ open, onSubmit, onCancel }: AddendaUploadFor
                     </div>
                 )}
 
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                     <Label>
                         Type <span className="text-red-500">*</span>
                     </Label>
@@ -172,7 +172,7 @@ export function AddendaUploadForm({ open, onSubmit, onCancel }: AddendaUploadFor
                             </SelectItem>
                         </SelectContent>
                     </Select>
-                </div>
+                </div> */}
 
                 <div className="space-y-2">
                     <Label>
