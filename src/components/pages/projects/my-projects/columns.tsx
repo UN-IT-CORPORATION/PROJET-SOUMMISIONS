@@ -61,7 +61,7 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             }
 
             return (
-                <div className="flex items-start gap-3 py-1">
+                <div className="flex flex-col md:flex-row items-start gap-3 py-1">
                     <img
                         src="/images/OIU9MH0.jpg"
                         alt="Illustration projet"
@@ -75,8 +75,8 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
                         >
                             {project.name}
                         </Link>
-                        <div className="flex items-center gap-1 text-xs text-gray-500">
-                            <span className="font-medium">Période :</span>
+                        <div className="flex flex-col md:flex-row md:items-center gap-1 text-xs text-gray-500">
+                            <span className="font-medium">Période:</span>
                             <span>{new Date(project.submissionPeriod.start).toLocaleDateString()} - {new Date(project.submissionPeriod.end).toLocaleDateString()}</span>
                         </div>
                         <span className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium border w-fit ${typeColors[project.type] || "bg-gray-50 text-gray-700 border-gray-300"}`}>
