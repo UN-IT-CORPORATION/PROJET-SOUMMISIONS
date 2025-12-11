@@ -61,21 +61,28 @@ export const getProjectColumns = (t: TFunction): ColumnDef<Project>[] => [
             }
 
             return (
-                <div className="flex flex-col gap-2 py-1">
-                    <Link
-                        to="/projects/view/dashboard"
-                        search={{ projectId: project.id }}
-                        className="text-gray-900 font-medium text-lg cursor-pointer"
-                    >
-                        {project.name}
-                    </Link>
-                    <div className="flex items-center gap-1 text-xs text-gray-500">
-                        <span className="font-medium">Période :</span>
-                        <span>{new Date(project.submissionPeriod.start).toLocaleDateString()} - {new Date(project.submissionPeriod.end).toLocaleDateString()}</span>
+                <div className="flex items-start gap-3 py-1">
+                    <img
+                        src="/images/OIU9MH0.jpg"
+                        alt="Illustration projet"
+                        className="h-20 w-20 rounded-md object-cover border"
+                    />
+                    <div className="flex flex-col gap-2">
+                        <Link
+                            to="/projects/view/dashboard"
+                            search={{ projectId: project.id }}
+                            className="text-gray-900 font-medium text-md cursor-pointer"
+                        >
+                            {project.name}
+                        </Link>
+                        <div className="flex items-center gap-1 text-xs text-gray-500">
+                            <span className="font-medium">Période :</span>
+                            <span>{new Date(project.submissionPeriod.start).toLocaleDateString()} - {new Date(project.submissionPeriod.end).toLocaleDateString()}</span>
+                        </div>
+                        <span className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium border w-fit ${typeColors[project.type] || "bg-gray-50 text-gray-700 border-gray-300"}`}>
+                            {project.type}
+                        </span>
                     </div>
-                    <span className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium border w-fit ${typeColors[project.type] || "bg-gray-50 text-gray-700 border-gray-300"}`}>
-                        {project.type}
-                    </span>
                 </div>
             )
         },
