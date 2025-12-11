@@ -2,6 +2,9 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import { Label } from "@/components/ui/label"
 import { MultiSelect, type Option } from "@/components/ui/multi-select"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Image as ImageIcon } from "lucide-react"
 
 const AVAILABLE_SERVICES: Option[] = [
     { label: "AMIANTE", value: "amiante" },
@@ -20,6 +23,20 @@ const AVAILABLE_SERVICES: Option[] = [
 export function ProjectAddStepFive() {
     const { t } = useTranslation()
     const [selectedServices, setSelectedServices] = React.useState<string[]>([])
+    const [imageFile, setImageFile] = React.useState<File | null>(null)
+    const [imagePreview, setImagePreview] = React.useState<string | null>(null)
+
+    const onImageChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+        const file = e.target.files?.[0] ?? null
+        setImageFile(file)
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = () => setImagePreview(reader.result as string)
+            reader.readAsDataURL(file)
+        } else {
+            setImagePreview(null)
+        }
+    }
 
     return (
         <div className="space-y-8">
@@ -38,7 +55,7 @@ export function ProjectAddStepFive() {
                 </div>
             </div>
 
-            <div className="space-y-4">
+                <div className="space-y-4">
                 <div>
                     <Label className="text-sm font-semibold text-gray-900">
                         Services du projet <span className="text-red-500">*</span>
@@ -65,6 +82,45 @@ export function ProjectAddStepFive() {
                         <p className="text-xs text-muted-foreground">
                             Ces services seront associés au projet et pourront être utilisés pour créer des demandes
                             de service.
+                        </p>
+                    </div>
+                )}
+            </div>
+
+            {/* Illustration du projet */}
+            <div className="space-y-4">
+                <div>
+                    <Label className="text-sm font-semibold text-gray-900">
+                        Illustration du projet
+                    </Label>
+                    <p className="text-xs text-muted-foreground mb-3">
+                        Ajoutez une image (JPEG, PNG) pour illustrer ce projet.
+                    </p>
+                </div>
+
+                <div className="space-y-3">
+                    <label className="flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-muted-foreground/40 bg-muted/30 px-6 py-8 text-center transition hover:border-primary hover:bg-primary/5">
+                        <ImageIcon className="mb-3 h-8 w-8 text-primary" />
+                        <span className="text-sm font-medium text-gray-900">Déposer votre image ici</span>
+                        <span className="text-xs text-muted-foreground">Formats acceptés : .png, .jpg, .jpeg</span>
+                        <input type="file" className="hidden" accept="image/png, image/jpeg, image/jpg" onChange={onImageChange} />
+                    </label>
+
+                    {imagePreview && (
+                        <div className="rounded-lg border border-dashed border-muted-foreground/40 bg-white p-3">
+                            <img
+                                src={imagePreview}
+                                alt="Prévisualisation de l'image du projet"
+                                className="h-32 w-32 object-cover rounded-md"
+                            />
+                        </div>
+                    )}
+                </div>
+
+                {imageFile && (
+                    <div className="rounded-lg border border-dashed border-muted-foreground/40 bg-muted/30 p-4">
+                        <p className="text-sm text-gray-700">
+                            Fichier sélectionné: <span className="font-medium">{imageFile.name}</span> ({Math.round(imageFile.size / 1024)} Ko)
                         </p>
                     </div>
                 )}
